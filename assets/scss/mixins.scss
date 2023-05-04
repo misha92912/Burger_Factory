@@ -39,9 +39,9 @@
     color: $color; 
     &:hover{
         filter: brightness(1.3);
+        transform: scale(1.1);
     }
     &:active {
-        transform: scale(1.01);
         filter: brightness(1.1);
     }
 }

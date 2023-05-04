@@ -117,7 +117,7 @@ header{
             @include dflex(row, 70px, start);
             text-transform: uppercase;
             font-weight: bold;
-            & li:hover {
+            & li {
                 @include link;
                 cursor: pointer;
             }
@@ -146,6 +146,12 @@ header{
         -moz-border-radius: 5px;
         -ms-border-radius: 5px;
         -o-border-radius: 5px;
+        transition: 400ms;
+        &:hover {
+            & .line{
+                outline: 0.5px solid black;
+            }
+        }
         & .line {
             width: 100%;
             height: 3px;
@@ -160,6 +166,7 @@ header{
         @include breakpoint(xl){
             display: flex;
         }
+
     }
     &.toggle {
         z-index: 4;
@@ -484,8 +491,8 @@ header{
             width: 100%;
             text-align: end;
             & span {
-                cursor: pointer;
                 @include link($link);
+                cursor: pointer;
             }
         }
     }
