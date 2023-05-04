@@ -1,0 +1,591 @@
+@import "zerostyle";
+@import "mixins";
+@import "variables";
+@import "submenu";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+.content {
+    position: relative;
+    @include font();
+    @include dflex(column, 0px, start, center);
+    padding: 0 0 30px 0px;
+    overflow: hidden; 
+    & .background{
+        position: absolute;
+        content: '';
+        z-index: 0;
+        top: 105px;
+        width: 100%;
+        height: 605px;
+        display: flex;
+        justify-content: center;
+        @include breakpoint(xxl){
+            @include sizeWH(100%, 555px);
+        }
+        @include breakpoint(xl){
+            @include sizeWH(100%, 450px);
+        }
+        @include breakpoint(lg){
+            @include sizeWH(100%, 380px);
+        }
+        @include breakpoint(md){
+            @include sizeWH(100%, 370px);
+        }
+        & img {
+            align-self: start;
+            max-height: 100%;
+        }
+    }
+    & main {
+        @include dflex(column, 150px, start, center);
+        z-index: 1;
+    }
+    & h1 {
+        @include font(84px, 900, 125px);
+    }
+    & h2 {
+        @include font(64px, 900 , 95px)
+    }
+    & h3 {
+        @include font(24px, bold, 35px)
+    }
+    & h4 {
+        @include font(24px, bold, 35px)
+    }
+    & p {
+        @include font(18px, normal, 27px);
+    }
+    @include breakpoint(xxl){
+        & h1 {
+            @include font(64px, 900, 125px);
+        }
+        & h2 {
+            @include font(44px, 900 , 95px)
+        }
+    }
+    @include breakpoint(sm){
+        & h2 {
+            @include font(37px, 900 , 95px)
+        }
+    }
+}
+.container {
+    width: 100vw;
+    max-width: 1352px;
+    padding: 0 40px;
+    @include breakpoint(sm){
+        padding: 0 20px; 
+    }
+}
+
+header{
+    position: relative;
+    width: 100%;
+    height: 125px;
+    background-color: white;
+    box-shadow: 0px 3px 3px -3px #00000029;
+    @include dflex(row, 0px , space-between);
+    @include breakpoint(xl){
+        height: 105px;
+        position: fixed;
+        top: 0px;
+        z-index: 3;
+    }
+    & .header-help-div{
+        display: none;
+        height: 100%;
+        padding: 50px 0;
+        @include breakpoint(xl){
+            display: block;
+        }
+    }
+    & .header-logo{
+        @include sizeWH(auto, auto, 208px, 67px);
+        @include breakpoint(md){
+            @include sizeWH(auto, auto, 180px, auto);
+        }
+        @include breakpoint(sm){
+            opacity: 0;
+            width: 0;
+        }
+    }
+    & nav {
+        height: 100%;
+        padding: 50px 0;
+        ul {
+            @include dflex(row, 70px, start);
+            text-transform: uppercase;
+            font-weight: bold;
+            & li:hover {
+                @include link;
+                cursor: pointer;
+            }
+        }
+        @include breakpoint(xl){
+            display: none
+        }
+    }
+    & .button {
+        @include button;
+    }
+    & .toggle-menu {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translate(0, -50%);
+        width: 40px;
+        height: 30px;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 2px 2px 2px 3px;
+        border-radius: 5px;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        transition: 400ms;
+        &:hover {
+            & .line{
+                outline: 0.5px solid black;
+            }
+        }
+        & .line {
+            width: 100%;
+            height: 3px;
+            border-radius: 5px;
+            background-color: $black;
+            transition: transform 0.2s ease-out;
+            -webkit-transition: transform 0.2s ease-out;
+            -moz-transition: transform 0.2s ease-out;
+            -ms-transition: transform 0.2s ease-out;
+            -o-transition: transform 0.2s ease-out;
+        }
+        @include breakpoint(xl){
+            display: flex;
+        }
+
+    }
+    &.toggle {
+        z-index: 4;
+        background-color: inherit;
+        @include breakpoint(xl){
+            box-shadow: none;
+            & .header-logo{
+                opacity: 0;
+            }
+            & .button{
+                opacity: 0;
+            }
+        }
+        & .line1 {
+            background-color: $black;
+            transform: scale(0.9) rotateZ(-45deg) translate(-6px, 4px);
+        }
+        & .line2 {
+            display: none;
+        }
+    
+        & .line3 {
+            background-color: $black;
+            transform: scale(0.9) rotateZ(45deg) translate(-6px, -4px);
+        }
+    
+    }
+}
+.banner {
+    @include dflex(row, 67px, space-between, start);
+    padding-top: 50px;
+
+    @include breakpoint(xxl){
+        @include dflex(row, 0, space-between, start);
+        padding-top: 30px;
+    }
+    @include breakpoint(xl){
+        margin-top: 105px;
+    }
+    @include breakpoint(sm){
+        position: relative;
+    }
+    .banner__text {
+        padding-top: 90px;
+        @include dflex(column, 20px, start, start);
+        white-space: nowrap;
+        @include breakpoint(xxl){
+            padding-top: 30px;
+        }
+        @include breakpoint(xl){
+            padding-top: 20px;
+            white-space: pre-wrap;
+            & h1{
+                line-height: none;
+            }
+        }
+        @include breakpoint(lg){
+            padding-top: 0px;
+            flex: 0 0 50%;
+            & h1{
+                line-height: 75px;
+            }
+        }
+        @include breakpoint(md){
+        }
+        @include breakpoint(sm){
+            & h1{
+                max-width: 50%;
+                line-height: 65px;
+            }
+            & h3{
+                font-size: 25px;
+            }
+        }
+        @include breakpoint(xs){
+            flex: 0 0 100%;
+            & h1{
+                font-size: 50px;
+            }
+            & h3{
+                max-width: 60%;
+            }
+        }
+    }
+    .banner__img {
+        @include breakpoint(lg){
+            flex: 0 0 50%; 
+
+        }
+        @include breakpoint(sm){
+            position: absolute;
+            width: 180px;
+            height: 200px;
+            right: 10px;
+            top: 30px
+        }
+        @include breakpoint(xs){
+            position: absolute;
+            width: 160px;
+            height: 190px;
+            right: 5px;
+            top: 30px
+        }
+        
+        & img {
+            @include sizeWH(100%, 100%);
+            @include breakpoint(xxl){
+                @include sizeWH(100%, 500px);
+            }
+            @include breakpoint(xl){
+                @include sizeWH(100%, 400px);
+            }
+            @include breakpoint(lg){
+                @include sizeWH(auto, 360px); 
+            }
+            @include breakpoint(md){
+                @include sizeWH(100%, 340px);
+            }
+            @include breakpoint(sm){
+                @include sizeWH(100%, 100%);
+            }
+        }
+    }
+    & .button {
+        @include button(280px, $yellow, $yellowActivation);
+        margin-top: 6px;
+    }
+}
+.ingredients {
+    @include dflex(column, 20px, start, center);
+    position: relative;
+    & h3 {
+        text-align: center;
+    }
+    & .swiper {
+        width: 600px;
+        height: 300px;
+    }
+    & .swiper-container{ 
+        align-self: flex-start;
+        width: 100%;
+        height: max-content;
+        position: relative;
+        overflow: hidden;
+        margin-top: 30px;
+        padding: 1px;
+        &::before{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 184px;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgb(255, 255, 255) 100%);
+            z-index: 3;
+            transform: rotate(180deg);
+            @include breakpoint(sm){
+                width: 45px;
+            }
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 184px;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgb(255, 255, 255) 100%);
+            z-index: 3;
+            @include breakpoint(sm){
+                width: 45px;
+            }
+        }
+        & .swiper-wrapper{
+            @include dflex(row, 0px, start, start);
+            height: max-content;
+            position: relative;
+            overflow-y: hidden;
+            cursor: grab;
+            padding: 0 110px 10px;
+            
+            @include breakpoint(sm){
+                padding: 0 25px 10px;
+            }
+            &::-webkit-scrollbar {
+                opacity: 0;
+            } 
+            &::after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 111%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.0);
+            }
+            & .ingredient{
+                @include card();
+                @include dflex(column, space-between);
+                height: 242px;
+                width: max-content;
+                margin: 0 20px;
+                position: relative;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.0);
+                }
+                & .img-container{
+                    height: 180px;
+                    width: 189px;
+                    & img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+                & h4 {
+                    @include font(18px);
+                    text-align: center;
+                }
+            }
+        }
+    }
+    & .ingredients__text {
+        margin: 30px 230px 0;
+        text-align: center;
+        @include breakpoint(lg){
+            margin: 30px 100px 0;
+        }
+        @include breakpoint(md){
+            margin: 30px 50px 0;
+        }
+        @include breakpoint(sm){
+            margin: 30px 0px 0;
+            text-align: justify;
+        }
+    }
+}
+.story {
+    @include dflex(row, 50px, start, center);
+    @media (max-width: 1250px) {
+        @include dflex(column, 50px, center);
+        & .story__text {
+            @include dflex(row, 20px);
+        }
+        text-align: center;
+    }
+    
+    
+    & .story__text {
+        @include dflex(column, 20px, start, start);
+        @media (max-width: 1250px) {
+            @include dflex(column, 20px);
+        }
+        @include breakpoint(md){
+            & p {
+                text-align: justify;
+            }
+        }
+        & p {
+            padding: 30px 0 0 0;
+        }
+    }
+    & .story__image {
+        & img{
+            @include sizeWH(635px, 441px);
+            border-radius: 30px;
+            @include breakpoint(md){
+                @include sizeWH(100%, 100%);
+            }
+        }
+    }
+}
+.burgers {
+    @include dflex(column, 50px, start, center);
+    position: relative;
+    height: 637px;
+    @include breakpoint(xxl){
+        height: max-content
+    }
+    & .burgers__slider {
+        @include dflex(row, 26px, start, start);
+        @include breakpoint(xxl){
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    & .burger {
+        @include dflex(column, 0px, start, center);
+        @include card;
+        width: 440px;
+        z-index: 3;
+        background-color: white;
+        
+        @media (max-width: 470px) {
+            width: 100%;
+        }
+        & .img-container{
+            @include img-container(220px, 207px);
+            min-height: max-content;
+            margin: 60px 0 0 0;
+        }
+        & div[name="bIngridients"] {
+            align-self: start;
+            max-height: 0px;
+            overflow: hidden;
+            transition: 200ms ease 0ms;
+            margin: 15px 0 0;
+            & h4 {
+                @include font(14px)
+            }
+            & p {
+                @include font(14px, normal)
+            }
+        }
+        & .burger-link {
+            width: 100%;
+            text-align: end;
+            & span {
+                @include link($link);
+                cursor: pointer;
+            }
+        }
+    }
+    & .burger-button{
+        position: absolute;
+        bottom: 0;
+        @include button;
+        
+        @include breakpoint(xxl){
+            position: static;
+        }
+    }
+    
+}
+.location {
+    @include dflex(column, 30px, start);
+    & .location__info {
+        @include dflex(row, 30px, start);
+        @include breakpoint(lg){
+            @include dflex(column, 20px, start);
+        }
+        & {
+            @include font(24px, normal);
+        }
+    }
+    & .location__map {
+        @include img-container(860px, 483px);
+        position: relative;
+        @include breakpoint(lg){
+            @include img-container(100%, 100%);
+        }
+        & .position{
+            @include sizeWH(1px, 1px);
+            position: absolute;
+            top: 42.33%;
+            left: 41.61%;
+            background-color: rgb(255, 255, 255);
+            &::before{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                content: '';
+                @include sizeWH(50px, 50px);
+                background-color: white;
+                border-radius: 50%;
+                background-image: url("../img/Design.png");
+                background-position: 50%;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}
+footer {
+    @include dflex(row, 0);
+    @include sizeWH(100%, 125px);
+    margin: 150px 0 28px;
+    background-color: $gray;
+    @include breakpoint(xxl){
+        padding: 0 50px;
+    }
+    @include breakpoint(xs){
+        @include dflex(column, 30px, space-between);
+        @include sizeWH(100%, max-content);
+    }
+    & .footer__content{
+        @include dflex(row, 0, space-between);
+        padding: 30px 0;
+        height: 100%;
+        width: 100%;
+        @include breakpoint(xs){
+            @include dflex(column, 30px, space-between);
+            text-align: center
+        } 
+        & .img-container{
+            @include img-container(208px);
+            @include breakpoint(sm){
+                @include img-container(170px, auto);
+            } 
+        }
+        & .footer__info {
+            @include dflex(column, 5px, start, end);
+            &:not(strong){
+                @include font(14px, normal, 21px);
+            }
+            text-align: center;
+            margin: 0 15px;
+            @include breakpoint(xs){
+                @include dflex(column, 5px, start, center);
+                text-align: center;
+            } 
+        }
+    }
+}
+
