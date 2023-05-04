@@ -1,0 +1,32 @@
+$mainBG: #EE9C10;
+$gray: #F5F5F5; //footer bg
+$darkGray: #00000029; //shadow, light text
+$black: #2A2A2A; //text
+$blue: #00B3FA; 
+$blueActivation: #0098F7;
+$link: #008BF6; //link in card
+$yellow: #F6E224; //action button
+$yellowActivation: #EE9C10;
+
+$padding: 0px 0px 0px 0px;
+
+@mixin breakpoint($point){
+    @if $point == xxl{
+        @media (max-width: 1366px) {@content;}
+    }
+    @if $point == xl{
+        @media (max-width: 1024px) {@content;}
+    }
+    @if $point == lg{
+        @media (max-width: 992px) {@content;}
+    }
+    @else if $point == md{
+        @media (max-width: 768px) {@content;}
+    }
+    @else if $point == sm{
+        @media (max-width: 576px) {@content;}
+    }
+    @else if $point == xs{
+        @media (max-width: 450px) {@content;}
+    }
+}
