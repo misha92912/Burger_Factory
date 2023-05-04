@@ -203,6 +203,97 @@ h1, h2, h3, h4, h5, h6 {
   transition: 300ms;
 }
 
+.order-container {
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+  border-radius: 26px;
+  padding: 20px 20px 20px 20px;
+  z-index: 10;
+  position: fixed;
+  width: 350px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 30px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 30px;
+  background-color: white;
+}
+.order-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 27px;
+  font-family: "Poppins", sans-serif;
+  color: #2A2A2A;
+}
+.order-container form h3 {
+  text-align: center;
+}
+.order-container form ul {
+  width: 100%;
+}
+.order-container form ul li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: -webkit-max-content 10px 1fr 10px 20px;
+  -ms-grid-columns: max-content 10px 1fr 10px 20px;
+  grid-template-columns: -webkit-max-content 1fr 20px;
+  grid-template-columns: max-content 1fr 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 10px;
+}
+.order-container form ul li label {
+  font-weight: bold;
+}
+.order-container form ul li input {
+  width: 100%;
+  height: 100%;
+}
+.order-container form input {
+  width: 100%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  background-color: #00B3FA;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 8px;
+}
+.order-container form input:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.order-container form input:active {
+  background-color: #0098F7;
+}
+
 .content {
   position: relative;
   font-size: 18px;
@@ -1318,90 +1409,14 @@ header.toggle .line3 {
   font-family: "Poppins", sans-serif;
   color: #2A2A2A;
 }
-.location .location__map {
-  width: 860px;
-  height: 483px;
-  max-width: none;
-  max-height: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 0;
-  position: relative;
-}
-.location .location__map img {
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  max-height: none;
-  max-width: 100%;
+.location .mapouter {
+  border-radius: 25px;
+  overflow: hidden;
 }
 @media (max-width: 992px) {
-  .location .location__map {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    gap: 0;
+  .location .mapouter {
+    max-width: 100% !important;
   }
-  .location .location__map img {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-    max-width: 100%;
-  }
-}
-.location .location__map .position {
-  width: 1px;
-  height: 1px;
-  max-width: none;
-  max-height: none;
-  position: absolute;
-  top: 42.33%;
-  left: 41.61%;
-  background-color: rgb(255, 255, 255);
-}
-.location .location__map .position::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: 1;
-  content: "";
-  width: 50px;
-  height: 50px;
-  max-width: none;
-  max-height: none;
-  background-color: white;
-  border-radius: 50%;
-  background-image: url("../img/Design.png");
-  background-position: 50%;
-  background-repeat: no-repeat;
 }
 
 footer {

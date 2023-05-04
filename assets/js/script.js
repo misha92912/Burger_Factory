@@ -79,3 +79,70 @@ const mouseUpHandler = function () {
     ele.style.cursor = 'grab';
     ele.style.removeProperty('user-select');
 };
+
+// окно заказа
+const order = document.createElement('div');
+order.classList.add('order-container');
+order.innerHTML = `
+<div class="order-container">
+    <form action="" method="POST" id="orederForm">
+        <h3>Choose burger</h3>
+        <ul>
+            <li>
+                <img src="./assets/img/Design.png" alt="1/4 Pound Cheese">
+                <label>1/4 Pound Cheese</label>
+                <input type="checkbox" name="cheese" id="cheese">
+            </li>
+            <li>
+                <img src="./assets/img/Design.png" alt="Big Burger">
+                <label>Big Burger</label>
+                <input type="checkbox" name="big" id="big">
+            </li>
+            <li>
+                <img src="./assets/img/Design.png" alt="Pure Bacon">
+                <label>Pure Bacon</label>
+                <input type="checkbox" name="bacon" id="bacon">
+            </li>
+        </ul>
+        <input type="submit" id="formBtn" value="Close">
+    </form>
+</div>`
+order.style.display = 'none';
+document.body.appendChild(order);
+formBtn.addEventListener('click', (e)=>pushOrder(e));
+orederForm.addEventListener('change', ()=>{
+    const {cheese, big, bacon} = orederForm;
+    if( cheese.checked || big.checked || bacon.checked  ) {
+        formBtn.value = 'Order'
+    }
+    else {
+        formBtn.value = 'Close'
+    }
+});
+const orederBtns = document.getElementsByClassName('order-button');
+console.log(orederBtns);
+for( let i=0; i < orederBtns.length; i++ ){
+    orederBtns[i].addEventListener('click', ()=>showOrderWindow())
+}
+function showOrderWindow(){
+    order.style.display === 'block'
+        ? order.style.display = 'none'
+        : order.style.display = 'block'
+    ;
+}
+
+function pushOrder(e){
+    e.preventDefault()
+    const {cheese, big, bacon} = orederForm;
+    const orederText = 
+    `Order: ${cheese.checked ? '1/4 Pound Cheese ' : ''} ${big.checked ? 'Big Burger ' : ''}${bacon.checked ? 'Pure Bacon ' : ''}
+    `
+    if( cheese.checked || big.checked || bacon.checked  ) {
+        cheese.checked = false;
+        big.checked = false;
+        bacon.checked = false;
+        formBtn.value = 'Close'
+        console.log(orederText.length > 8 ? orederText : '');
+    }
+    order.style.display = 'none';
+}
