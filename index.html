@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Burger Factory</title>
+    <link rel="icon" type="image/x-icon" href="/assets/img/Design.png">
+</head>
+<body>
+    <div class="content">
+        <div class="submenu-container">
+            <nav class="header__nav nav-bar">
+                <ul class="nav-list">
+                    <li class="nav-list-item"><span  id="subNavIngredient" class="nav-link">ingredient</span></li>
+                    <li class="nav-list-item"><span  id="subNavStory" class="nav-link">story</span></li>
+                    <li class="nav-list-item"><span  id="subNavBurgers" class="nav-link">burgers</span></li>
+                    <li class="nav-list-item"><span  id="subNavLocation" class="nav-link">location</span></li>
+                </ul>
+            </nav>
+        </div>
+        <header class="container">
+            <div class="header-help-div"></div>
+            <div class="toggle-menu">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </div>
+            <img class="header-logo" src="./assets/img/Groupe 1.png" alt="Burger factory logo">
+            <nav class="header-nav">
+                <ul>
+                    <li id="navIngredient">ingredient</li>
+                    <li id="navStory">story</li>
+                    <li id="navBurgers">burgers</li>
+                    <li id="navLocation">location</li>
+                </ul>
+            </nav>
+            <button class="header-button button" id="btnOrder">Order now</button>
+            
+        </header>
+        <div class="background">
+            <img src="./assets/img/Tracé 1.svg" alt="">
+        </div>
+        <main>
+            <div class="banner container">
+                <div class="banner__text">
+                    <h1>Burger Factory</h1>
+                    <h3>Your dreamed burger close to your locations!</h3>
+                    <button class="banner-button button" id="btnIngredient">Discover the ingredients</button>
+                </div>
+                <div class="banner__img">
+                    <img src="./assets/img/Groupe 2@2x.png" alt="Big burger">
+                </div>
+            </div>
+            <div class="ingredients container">
+                <h2 class="ingredients__title">Ingredients</h2>
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Fusce mollis id arcu vel maximus.</h3>
+                <div class="swiper-container unselectable">
+                    <div class="swiper-wrapper unselectable">
+                            <div class="ingredient unselectable">
+                                <div class="img-container">
+                                    <img src="./assets/img/Design-3@2x.png" alt="buns">
+                                </div>
+                                <h4>Buns</h4>
+                            </div>
+                            <div class="ingredient unselectable">
+                                <div class="img-container unselectable">
+                                    <img src="./assets/img/19@2x.png" alt="salad">
+                                </div>
+                                <h4>Salad</h4>
+                            </div>
+                            <div class="ingredient">
+                                <div class="img-container">
+                                    <img src="./assets/img/tomato@2x.png" alt="">
+                                </div>
+                                <h4>Tomato</h4>
+                            </div>
+                            <div class="ingredient">
+                                <div class="img-container">
+                                    <img src="./assets/img/Design-1@2x.png" alt="chesse">
+                                </div>
+                                <h4>Cheese</h4>
+                            </div>
+                            <div class="ingredient">
+                                <div class="img-container">
+                                    <img src="./assets/img/Design-2@2x.png" alt="meat">
+                                </div>
+                                <h4>Meat</h4>
+                            </div>
+                    </div>
+                </div>
+                <div class="ingredients__text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget consequat lorem. Ut nec placerat purus. Fusce vitae faucibus augue, non commodo elit. Integer risus orci, ultricies ac dapibus sed, dignissim interdum quam. Proin quis dignissim diam. Donec id magna placerat, fringilla odio et, efficitur lacus. Vivamus eu ultricies erat, eu lobortis nunc. Sed nec dignissim libero. Integer cursus leo nunc. Nulla mattis interdum nunc, sed semper turpis. Cras elit lorem, mollis ut feugiat ac, ultricies eu dolor.</p>
+                </div>
+            </div>
+            <div class="story container">
+                <div class="story__text">
+                    <h2>The story</h2>
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mollis id arcu vel maximus.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget consequat lorem. Ut nec placerat purus. Fusce vitae faucibus augue, non commodo elit. Integer risus orci, ultricies ac dapibus sed, dignissim interdum quam. Proin quis dignissim diam. Donec id magna placerat, fringilla odio et, efficitur lacus. Vivamus eu ultricies erat, eu lobortis nunc. Sed nec dignissim libero. Integer cursus leo nunc. Nulla mattis interdum nunc, sed semper turpis. Cras elit lorem, mollis ut feugiat ac, ultricies eu dolor.</p>
+                </div>
+                <div class="story__image">
+                    <img src="./assets/img/Rectangle 10@2x.png" alt="background gradient">
+                </div>
+            </div>
+            <div class="burgers container">
+                <h2>Burgers</h2>
+                <div class="burgers__slider">
+                    <div class="burger">
+                        <h4>1/4 Pound Cheese</h4>
+                        <div class="img-container"><img src="./assets/img/Design-4@2x.png" alt="burger"></div>
+                        <div name="bIngridients">
+                            <ul>
+                                <li><h4>Ingridient</h4></li>
+                                <li><p>Lorem ipsum</p></li>
+                                <li><p>Lorem ipsum</p></li>
+                                <li><p>Lorem ipsum</p></li>
+                            </ul>
+                        </div>
+                        <div class="burger-link" name="bIngredientLink">
+                            <span>Details</span>
+                        </div>
+                    </div>
+                    <div class="burger">
+                        <h4>Big Burger</h4>
+                        <div class="img-container">
+                            <img src="./assets/img/Design-4@2x.png" alt="">
+                        </div>
+                        <div  name="bIngridients">
+                            <ul>
+                                <li><h4>Ingridient</h4></li>
+                                <li><p>Lorem ipsum</p></li>
+                                <li><p>Lorem ipsum</p></li>
+                                <li><p>Lorem ipsum</p></li>
+                            </ul>
+                        </div>
+                        <div class="burger-link" name="bIngredientLink">
+                            <span>Details</span>
+                        </div>
+                    </div>
+                    <div class="burger">
+                        <h4>Pure Bacon</h4>
+                        <div class="img-container"><img src="./assets/img/Design-4@2x.png" alt=""></div>
+                        <div  name="bIngridients">
+                            <ul>
+                                <li><h4>Ingridient</h4></li>
+                                <li><p>Lorem ipsum</p></li>
+                                <li><p>Lorem ipsum</p></li>
+                                <li><p>Lorem ipsum</p></li>
+                            </ul>
+                        </div>
+                        <div class="burger-link" name="bIngredientLink">
+                            <span>Details</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="burger-button button">Order now</button>
+            </div>
+            <div class="location container">
+                <h2>Location</h2>
+                <div class="location__info">
+                    <strong>Burger Factory</strong>
+                    <span>Pl. de la Riponne 10</span>
+                    <span>1005 Lausanne</span>
+                    <span>021 800 00 00</span>
+                </div>
+                <div class="location__map">
+                    <img src="./assets/img/Image 1@2x.png" alt="Map location: Pl. de la Riponne 10">
+                    <a href="https://www.google.com/maps/place/Pl.+de+la+Riponne+10,+1005+Lausanne,+%D0%A8%D0%B2%D0%B5%D0%B9%D1%86%D0%B0%D1%80%D1%96%D1%8F/@46.5241497,6.6330401,17z/data=!3m1!4b1!4m6!3m5!1s0x478c2e31ad9a7581:0x6910a4219da53f6!8m2!3d46.5241497!4d6.6330401!16s%2Fg%2F11lkdcbw8n" class="position" name="position" title="Pl. de la Riponne 10"></a>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer__content container">
+                <div class="img-container">
+                    <img src="./assets/img/Groupe 14@2x.png" alt="Burger factory logo">
+                </div>
+                <div class="footer__info">
+                    <strong>Burger Factory</strong>
+                    <span>Pl. de la Riponne 10</span>
+                    <span>1005 Lausanne</span>
+                    <span>021 800 00 00</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+@mixin sizeWH ($width, $height, $maxwidth: none, $maxheight: none){
+    width: $width;
+    height: $height;
+    max-width: $maxwidth;
+    max-height: $maxheight;
+}
+@mixin font($fsize: 18px, $fweight: bold, $lineHeight: 27px){
+    font-size: $fsize;
+    font-weight: $fweight;
+    line-height: $lineHeight;
+    font-family: 'Poppins', sans-serif;
+    color: $black;
+}
+
+@mixin dflex($direction: column, $gap:10px, $justify: center, $align: center){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items:  $align;
+    gap: $gap;
+}
+@mixin button ($width: 160px, $bgc: $blue, $bga: $blueActivation){
+    @include sizeWH($width, 40px);
+    @include font(18px);
+    min-width: $width;
+    background-color: $bgc;
+    padding: 9px, 33px, 6px;
+    border-radius: 10px;
+    transition: 100ms;
+    &:hover {
+        filter: brightness(1.05);
+    }
+    &:active {
+        background-color: $bga;
+    }
+}
+@mixin link($color: $black){
+    transition: 100ms;
+    color: $color; 
+    &:hover{
+        filter: brightness(1.3);
+    }
+    &:active {
+        transform: scale(1.01);
+        filter: brightness(1.1);
+    }
+}
+@mixin img-container($w: 100%, $h: 100%, $w2: 100%, $h2: 100%){
+    @include sizeWH($w, $h);
+    @include dflex(row, 0);
+    & img {
+        @include sizeWH($w2, $h2);
+        max-width: 100%;
+    }
+}
+@mixin card($imgW: 100%, $imgH: 100%) {
+    box-shadow: 0px 3px 6px $darkGray;
+    border-radius: 26px;
+    padding: 20px 20px 20px 20px;
+    
+}
